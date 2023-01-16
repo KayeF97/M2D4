@@ -138,12 +138,19 @@ console.log(arr);
  es:
  [1, 3, 5] ==> [5, 3, 1]
 */
+/* const lona = [2, 5, 19].reverse();
+
+console.log(lona);
+
 
 
 
 /* EXERCISE 11
  Write a piece of code for getting the maximum numerical value from an array.
 */
+/*const lona = [2, 5, 19]
+console.log(Math.max(...lona));
+
 
 /* This movies array is used throughout the exercises. You're not supposed to alter it. */
 const movies = [
@@ -265,27 +272,88 @@ const movies = [
     Write a piece of code to  find the oldest movie in the provided movies array.
 */
 
+/* let maxYear = parseInt(movies[0].Year);
+let oldestMovie;
+for (let i = 0; i < movies.length; i++) {
+  const parsedYear = parseInt(movies[i].Year); // parse string to number
+  if (parsedYear < maxYear) {
+    oldestMovie = movies[i];
+  }
+}
+
+console.log(oldestMovie);
+
+
 /* EXERCISE 13
     Write a piece of code to get the number of movies contained in the provided movies array.
 */
+
+/*console.log(movies.length);
+
 
 /* EXERCISE 14
     Write a piece of code to create an array with just the titles of the movies contained in the provided movies array.
 */
 
+//console.log(movies[0].Title);
+
+/*const titles = [];
+for(let i=0; i<movies.length; i++){
+  titles.push(movies[i].Title);
+}
+console.log(titles);
+
 /* EXERCISE 15
    Write a piece of code to get only the movies produced in this millennium from the provided movies array.
 */
+/*const thisMil = [];
+
+for (let i=0; i<movies.length; i++){
+  if(parseInt(movies[i].Year)>2000){
+    thisMil.push(movies[i]);
+  }
+
+}
+console.log(thisMil);
+
 
 /* EXERCISE 16
    Write a piece of code to get  the movie with the  id given below from the provided movies array.
 */
-const id = "tt0355702";
+/*const id = "tt0355702";
+
+let movieID;
+
+for(let i=0; i< movies.length; i++){
+  if (movies[i].imdbID===id){
+    movieID = movies[i];
+    break;
+
+  }
+}
+console.log(movieID);
 
 /* EXERCISE 17
      Write a piece of code to get  the  the sum of all the years in which the movies in the provided movies array have been produced.
 */
+/*let yearSum= 0;
+for(let i=0; i< movies.length; i++){
+  yearSum= yearSum + parseInt(movies[i].Year);
+}
+console.log(yearSum);
+
+
+
 
 /* EXERCISE 18
    Write a piece of code to get  all the movies in the provided movies array which contain the string value (provided below) in the title.
 */
+const query = "Avengers";
+const result = [];
+for (let i = 0; i < movies.length; i++) {
+  if (movies[i].Title.includes(query)) {
+    result.push(movies[i]);
+  }
+}
+
+console.log(result);
